@@ -1,0 +1,15 @@
+--- a/tools/kernel_flash/images/l4t_flash_from_kernel.sh
++++ b/tools/kernel_flash/images/l4t_flash_from_kernel.sh
+@@ -1305,8 +1305,11 @@
+ function flash_qspi
+ {
+ 	if [ "${host_mode}" = "0" ] && [ "${external_only}" = "0" ] && is_spi_flash; then
+ 		log_info "Starting to flash the QSPI."
+-		if [ -z "${target_partname}" ]; then
++		if [ -z "${target_partname}" ] && \
++			[ ! -f "${COMMON_IMAGES_DIR}/QSPI_SKIP_FULL_ERASE" ]; then
+ 			flash_erase /dev/mtd0 0 0
++		elif [ -f "${COMMON_IMAGES_DIR}/QSPI_SKIP_FULL_ERASE" ]; then
++			log_info "Skipping full QSPI erase (fast mode)."
+ 		fi
+ 		write_to_spi

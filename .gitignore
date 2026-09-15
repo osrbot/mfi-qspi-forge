@@ -1,0 +1,16 @@
+# NVIDIA/Seeed MFI packages and generated flash packages
+/mfi_recomputer-*/
+/*-qspi-only/
+/*-qspi-only-fast/
+/*-qspi-only-full/
+
+# Machine-specific installed launcher
+/MFI-QSPI-Forge.desktop
+/MFI-QSPI-Flasher.desktop
+
+# Build, test, and runtime output
+*.log
+__pycache__/
+*.py[cod]
+/build/
+/dist/
