@@ -16,13 +16,23 @@ The tool is intended for two-stage production:
 - Provides a Zenity-based GUI for package creation, verification, and flashing.
 - Keeps the original MFI package read-only.
 
-## GUI
+## Quick Start
 
-Install the user-local application:
+Clone and install the user-local application:
 
 ```bash
+git clone https://github.com/osrbot/mfi-qspi-forge.git
+cd mfi-qspi-forge
 ./install-mfi-qspi-forge.sh
 ```
+
+Launch the GUI from the desktop or application menu, or run:
+
+```bash
+mfi-qspi-forge
+```
+
+## GUI
 
 Then launch `MFI QSPI Forge` from the desktop or application menu.
 
